@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="vendor/css/font-awesome.css">
+    <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/css/loadingModal.css">
+    <script type="text/javascript" src="vendor/angular/angular.min.js"></script>
+    <title>获取匹配表</title>
+    <style type="text/css">
+        /*p.error {
+            display: none;
+        }*/
+
+        body{
+
+            background-image:url(vendor/img/17.jpg);
+
+            background-position:center;
+
+            background-size:100% 100%;
+
+            background-repeat:no-repeat;
+
+            background-attachment: fixed;
+
+        }
+
+        input.error {
+            border: 1px solid #a10;
+        }
+        .error {
+            color: #a10;
+        }
+
+        .wrapper {
+            width: 300px;
+            margin: 30px auto;
+        }
+        .has-success input {
+            border: 1px solid green;
+        }
+        pre {
+            display: none;
+        }
+        .input-result {
+            position: relative;
+            top: -27px;
+            float: right;
+            margin-right: 10px;
+
+        }
+        p.success {
+            color: green;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="SignUpController">
+<div class="wrapper">
+    <h1>皮皮坚,麻烦你笑一个</h1>
+    <form name="SignUpForm" ng-submit="submitForm()">
+
+        <!--<div class="form-group" ng-class="{'has-success':SignUpForm.username.$valid}">
+            <pre>合法：{{SignUpForm.username.$valid}}</pre>
+            <pre style="height: 50px;">合法：{{SignUpForm.username}}</pre>
+            <label>用户名：</label>
+            <input type="text"
+                   class="form-control"
+                   name="username"
+                   ng-model="userdata.username"
+                   ng-minlength="4"
+                   ng-maxlength="32"
+                   required>
+            <p aria-hidden="true" class="fa fa-check-square input-result success" ng-if="SignUpForm.username.$valid"></p>
+            <p class="error"
+               ng-if="SignUpForm.username.$error.required && SignUpForm.username.$touched">
+                用户名不可为空</p>
+            <p class="error"
+               ng-if="(SignUpForm.username.$error.minlength || SignUpForm.username.$error.maxlength) && SignUpForm.username.$touched">
+                用户名应是4-32位</p>
+
+        </div>
+        <div class="form-group" ng-class="{'has-success':SignUpForm.password.$valid}">
+            <pre>合法：{{SignUpForm.password.$valid}}</pre>
+            <pre style="height: 50px;">合法：{{SignUpForm.password}}</pre>
+            <label>密码：</label>
+            <input type="password"
+                   class="form-control"
+                   name="password"
+                   ng-model="userdata.password"
+                   required
+                   ng-minlength="6"
+                   ng-max-length="64">
+            <p aria-hidden="true" class="fa fa-check-square input-result success" ng-if="SignUpForm.password.$valid"></p>
+            <p class="error" ng-if="SignUpForm.password.$error.required && SignUpForm.password.$touched">密码不能为空</p>
+            <p class="error" ng-if="(SignUpForm.password.$error.minlength || SignUpForm.password.$error.maxlength) && SignUpForm.password.$touched">密码应是6-64位</p>
+        </div>
+        <div class="form-group" ng-class="{'has-success':SignUpForm.repassword.$valid}">
+            <pre>合法：{{SignUpForm.repassword.$valid}}</pre>
+            <pre style="height: 50px;">合法：{{SignUpForm.repassword}}</pre>
+            <label>确认密码：</label>
+            <input type="password"
+                   class="form-control"
+                   name="repassword"
+                   ng-model="userdata.repassword"
+                   required
+                   compare="userdata.password">
+            <p aria-hidden="true" class="fa fa-check-square input-result success" ng-if="SignUpForm.repassword.$valid"></p>
+            <p class="error" ng-if="SignUpForm.repassword.$error.compare && SignUpForm.repassword.$touched">两次输入的密码不一致</p>
+
+        </div>-->
+        <div class="form-group">
+            <button class="btn btn-primary">算了，看不到</button>
+        </div>
+    </form>
+
+    <div class="input-append">
+        <input type="file" file-model="myFile" >
+        <button ng-click="save()" >获取匹配结果</button>
+    </div>
+</div>
+</body>
+<script src="vendor/controller/main.js"></script>
+<script src="vendor/angular/loadingModal.js"></script>
+</html>

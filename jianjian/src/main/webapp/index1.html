@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="vendor/css/font-awesome.css">
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular/ng-file-upload.min.js"></script>
+    <script src="vendor/angular/ng-file-upload-shim.min.js"></script>
+    <title>Angular</title>
+    <style type="text/css">
+        .filename{
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+        }
+        a{
+            width: 50px;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+            position: relative;
+            cursor: pointer;
+            overflow:hidden;
+            display: inline-block;
+        }
+        a input{
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body ng-app="app"  ng-controller="uploadController">
+
+<div class="wrapper">
+    <form name="SignUpForm" ng-submit="submitForm()">
+        <h1>坚坚你好！</h1>
+        <div class="form-line">
+            <label>请选择证书文件：</label><span class="small-tip">证书文件只支持.pem格式，文件大小1M以内</span>
+            <div class="choose-file-area">
+                <input class="file-name" type="text" readonly="readonly" ng-model="fileItem.name"/>
+                <a href="javascript:;" class="choose-book">
+                    <input type="file" name="certificate" nv-file-select uploader="uploader" ng-click="clearItems()"/>浏览
+                </a>
+            </div>
+        </div>
+        <div class="form-line">
+            <label>请选择私钥文件：</label><span class="small-tip">私钥文件只支持.key格式，文件大小1M以内</span>
+            <div class="choose-file-area">
+                <input class="file-name" type="text" readonly="readonly" ng-model="fileItem1.name"/>
+                <a href="javascript:;" class="choose-key">
+                    <input type="file" name="key" nv-file-select uploader="uploader1" ng-click="clearItems1()"/>浏览
+                </a>
+            </div>
+        </div>
+        <button type="submit" ng-click="UploadFile()">提交</button>
+    </form>
+</div>
+<script type="text/javascript" src="vendor/controller/uploadController.js"></script>
+</body>
+</html>
